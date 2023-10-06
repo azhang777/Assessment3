@@ -42,6 +42,9 @@ public class Car extends Vehicle implements Drivable {
         return initialPrice + taxAmount;
     }
 
+    public  void printFormattedPriceAfterTax(float finalPrice) {
+        System.out.printf("%.2f\n", finalPrice);
+    }
     @Override
     public String toString() {
         return "Car{" +

@@ -11,11 +11,13 @@ public class VehicleApp {
             System.out.println(vehicle.getName());
         }
     }
+
     public static void printListOfFlyableObjects(List<Flyable> flyables) {
         for (Flyable flyable : flyables) {
             System.out.println(flyable);
         }
     }
+
     public static void sortAndPrintDriveableVehiclesBySpeed(List<Drivable> drivables) {
         Comparator<Drivable> speedComparator = new SpeedComparator();
         drivables.sort(speedComparator);

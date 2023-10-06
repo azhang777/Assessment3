@@ -7,17 +7,13 @@ import java.util.Map;
 
 public class Main {
 
-    public static void printFormattedPriceAfterTax(float finalPrice) {
-        System.out.printf("%.2f\n", finalPrice);
-    }
-    public static void
-    main(String[] args) {
+    public static void main(String[] args) {
         Plane plane = new Plane("plane",500,100000,new Engine(Size.LARGE));
         Boat boat = new Boat("boat",200,30000,new Engine(Size.SMALL), true);
         Car car = new Car("car",150,35000,new Engine(Size.MEDIUM),4);
         Truck truck = new Truck("truck",140,30000,new Engine(Size.MEDIUM));
         Drone drone = new Drone("drone");
-        FlyingCar flyingCar = new FlyingCar("flyingCar",300, 150000,new Engine(Size.MEDIUM));
+        FlyingCar flyingCar = new FlyingCar("flyingCar",300, 150000,new Engine(Size.MEDIUM),32322);
 
         List<Vehicle> vehicleList = new ArrayList<>();
         vehicleList.add(plane);
@@ -33,8 +29,8 @@ public class Main {
         flyableList.add(flyingCar);
         VehicleApp.printListOfFlyableObjects(flyableList);
 
-        Map<Integer,String> passenger = new HashMap<>();
-        Passenger passengers = new Passenger((HashMap) passenger);
+        HashMap<Integer,String> passenger = new HashMap<>();
+        Passenger passengers = new Passenger(passenger);
         passenger.put(1,"Andy Zhang");
         passenger.put(2,"Tony Zhang");
         VehicleApp.printPassengerNumbersOnly(passenger);
@@ -46,7 +42,7 @@ public class Main {
         drivableList.add(car);
 
         VehicleApp.sortAndPrintDriveableVehiclesBySpeed(drivableList);
-        printFormattedPriceAfterTax(car.getPriceAfterTax(car));
+        car.printFormattedPriceAfterTax(car.getPriceAfterTax(car));
 
         boat.printGpsInfo();
         car.printSpeed();
@@ -57,10 +53,6 @@ public class Main {
 
 /*
 Questions to ask Mikaila:
-
-1. Just to make sure, there are no discounts. There are only TAX for Vehicle
-   and extraTax for car?
 2. getPriceAfterTax needs a parameter Vehicle?
 3. Transports passengers is just returning true false?
-4. formattedPriceAfterTax in Main class or Car class?
  */

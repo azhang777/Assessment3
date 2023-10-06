@@ -2,8 +2,10 @@ package assessment;
 
 public class FlyingCar extends Vehicle implements Flyable,Drivable {
 
-    public FlyingCar(String name, int speed, double price, Engine engine) {
+    private long idNum;
+    public FlyingCar(String name, int speed, double price, Engine engine, long idNum) {
         super(name, speed, price, engine);
+        this.idNum = idNum;
     }
 
     @Override

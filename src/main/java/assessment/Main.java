@@ -47,7 +47,7 @@ public class Main {
         boat.printGpsInfo();
         car.printSpeed();
         System.out.println(plane.transportsPassenger());
-
+        System.out.println(flyingCar.getIdNum());
     }
 }
 

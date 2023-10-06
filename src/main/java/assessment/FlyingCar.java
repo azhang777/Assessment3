@@ -8,6 +8,14 @@ public class FlyingCar extends Vehicle implements Flyable,Drivable {
         this.idNum = idNum;
     }
 
+    public long getIdNum() {
+        return idNum;
+    }
+
+    public void setIdNum(long idNum) {
+        this.idNum = idNum;
+    }
+
     @Override
     public void printSpeed() {
         System.out.println(super.getSpeed());
